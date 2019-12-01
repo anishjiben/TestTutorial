@@ -1,0 +1,52 @@
+.header {
+  border-left: palevioletred 4px solid !important;
+
+}
+
+.collapse-title {
+  margin-left: 20px;
+  height: 100%;
+
+  .title-text {
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+  }
+}
+
+.custom_li:hover {
+  background-color: #f5f5f5;
+  cursor: pointer !important;
+}
+
+.chapters {
+  background-color: #ffffff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.right-content-list {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  cursor: pointer !important;
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.custom-control-label {
+  padding-left: 10px;
+  cursor: pointer !important;
+}
+
+.custom-control-pdf {
+  padding-left: 10px;
+  cursor: pointer !important;
+}
+
+.right-box {
+  max-height: 50vh;
+  overflow-y: auto;
+}

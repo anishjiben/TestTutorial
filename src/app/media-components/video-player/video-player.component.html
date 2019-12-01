@@ -1,0 +1,38 @@
+<div class="video-payer">
+  <vg-player>
+    <vg-buffering></vg-buffering>
+
+    <vg-scrub-bar>
+      <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+      <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+    </vg-scrub-bar>
+
+    <vg-controls [vgAutohide]="true" [vgAutohideTime]="4">
+      <vg-play-pause></vg-play-pause>
+      <vg-playback-button [playbackValues]="[ '1.0','1.25','1.50', '1.75', '2.0' ]"></vg-playback-button>
+
+      <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+      <vg-scrub-bar>
+        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+      </vg-scrub-bar>
+      <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+      <vg-mute vgFor="my-video"></vg-mute>
+      <vg-volume vgFor="my-video"></vg-volume>
+
+      <vg-fullscreen></vg-fullscreen>
+    </vg-controls>
+    <div class="row vg-overlay-play">
+      <div class="col-6 px-0 forward" (dblclick)="rewind()"><span class="icon"><i
+        class="fa fa-angle-double-left"></i></span>
+      </div>
+      <div class="col-6 px-0 backward" (dblclick)="forward()"><span class="icon"><i
+        class="fa fa-angle-double-right"></i></span></div>
+    </div>
+
+    <video #media [vgMedia]="media" id="my-video" [src]="srcPath" preload="auto" autoplay
+           (ended)="onVideoEnds()">
+      <track kind="subtitles" label="English" [src]="subTitlePath" srclang="en" default>
+    </video>
+  </vg-player>
+</div>

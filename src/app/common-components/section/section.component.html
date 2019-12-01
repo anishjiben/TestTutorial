@@ -1,0 +1,29 @@
+<div id="accordionExample">
+  <div>
+    <div class="right-content-list" [ngClass]="{'header': sectionSelected}">
+      <div id="headingOne" class="collapse-title" data-toggle="collapse" [attr.data-target]="'#collapse'+sectionNumber"
+           aria-expanded="true"
+           [attr.aria-controls]="'collapse'+sectionNumber">
+        <div><label class="title-text mb-0 weight-500 color-61">Section {{sectionNumber}} : {{section.title}}</label>
+        </div>
+        <div><label class="font-12 weight-400">{{section.numberOfVideosPlayed}}/{{section.numberOfVideos}}</label></div>
+      </div>
+    </div>
+    <div [id]="'collapse'+sectionNumber" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="chapters">
+        <ul class="py-3 collapse-title px-0 right-box">
+          <li class="mb-1 font-14 custom_li px-1 py-2" style="cursor: pointer;" *ngFor="let video of section.resources">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input"
+                     id="defaultUnchecked" [checked]="video.played">
+              <label
+                [ngClass]=" {'custom-control-label': video.videoLink.endsWith('.mp4'), 'custom-control-pdf': !video.videoLink.endsWith('.mp4')}"
+                (click)="onSectionClick(video.videoLink)">{{getTopicFromLink(video.topic)}}</label>
+              <label class="w-100 custom-control-pdf font-12 color-bd mb-0">13min</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

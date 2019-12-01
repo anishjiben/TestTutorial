@@ -1,0 +1,29 @@
+.title-component {
+  .no-padding {
+    padding: 0;
+  }
+
+  .title {
+    margin-bottom: .5rem;
+  }
+
+  .date {
+    label {
+      font-size: 11px;
+    }
+
+    .review {
+      float: right;
+    }
+
+    .rating {
+      float: right;
+
+      img {
+        height: 10px;
+      }
+
+      margin-right: 8px;
+    }
+  }
+}
